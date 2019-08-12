@@ -3,7 +3,8 @@ import {
     View,
     Text,
     Image,
-    ScrollView
+    ScrollView,
+    StatusBar
 } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import Colors from './color';
@@ -49,13 +50,13 @@ export default class Login extends React.Component {
                     this.setState=({mobile:''});
                     this.props.navigation.navigate('LoginOtp',{data:responseJson.Data,mobile:this.state.mobile});
                 }else{
-                    Toast.show(responseJson.Message, Toast.SHORT);
+                    Toast.show(responseJson.Message);
                 }
             })
             .catch((error) => {
                 this.setState({isLoading:false});
                 console.error(error);
-                Toast.show(error,Toast.LONG);
+                Toast.show(error);
             });
     }
 

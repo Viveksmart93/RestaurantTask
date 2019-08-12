@@ -45,7 +45,8 @@ export default class Login extends React.Component {
             isEmailValid: '',
             isAddValid: '',
             isDobValid: '',
-            isGenderValid: ''
+            isGenderValid: '',
+            chosenDate: new Date()
         }
     }
 
@@ -244,8 +245,11 @@ export default class Login extends React.Component {
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <DatePickerIOS
                             date={this.state.chosenDate}
-                            onDateChange={() => { }}
+                            onDateChange={(newDate) => {this.setState({chosenDate:newDate, dob: moment(newDate).format("DD/MM/YYYY")})}}
                         />
+
+                        <Button title={"Done"} onPress={()=>{this.setState({dateModal:false})}} />    
+
                     </View>
                 </Modal>
             </View>

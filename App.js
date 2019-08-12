@@ -35,31 +35,31 @@ const AuthStack = new createStackNavigator({
         color: Colors.grey,
         textAlign: 'center'
       },
-      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} />
+      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} onPress={()=>{navigation.goBack()}} />
     })
   },
   LoginOtp: {
     screen: LoginOtp,
     navigationOptions: ({ navigation }) => ({
-      title: 'Sign In',
+      title: 'Verify Otp',
       headerStyle: { elevation: 0 },
       headerTitleStyle: {
         color: Colors.grey,
         textAlign: 'center'
       },
-      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} />
+      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} onPress={()=>{navigation.goBack()}} />
     })
   },
   SignUp: {
     screen: SignUp,
     navigationOptions: ({ navigation }) => ({
-      title: 'Sign In',
+      title: 'Sign Up',
       headerStyle: { elevation: 0 },
       headerTitleStyle: {
         color: Colors.grey,
         textAlign: 'center'
       },
-      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} />
+      headerLeft: <Icon iconStyle={{ padding: 10 }} type='ionicon' name='ios-arrow-back' color={Colors.themeColor} onPress={()=>{navigation.goBack()}} />
     })
   }
 });
